@@ -5,14 +5,11 @@ const btt = document.querySelector('#btt')
 let timer = 0;
 
 const gerador = (num) => {
-    timer += segundo;
-    console.log(timer)
-
     let meio = num/2,
-    auxNum = num,
-    aux = meio;
-
+    auxNum = num;
+    btt.disabled = true;
     ampulheta.innerHTML = '';
+
     for (i=0; i<num; i++) {
         if (i < meio){
             if (i==0) {
@@ -40,6 +37,7 @@ const gerador = (num) => {
             auxNum+=2;
         }
     }
+    timer += segundo;
     --countP1, --countP2;
 }
 
@@ -57,10 +55,14 @@ const click = () => {
         if (timer >= num*segundo/2){
             console.log('aqui')
             clearInterval(intervalo);
-            timer = 0
+            timer = 0;
+            number.value = '';
+            btt.disabled = false;
+
         }
     }, segundo*2);
 };
 
 btt.addEventListener('click', click, false);
-
+document.addEventListener("keypress", function(e) {
+    if(e.key === 'Enter') btt.click()});
