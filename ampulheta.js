@@ -2,7 +2,7 @@ const space = '\40', caracter = '#', segundo = 1000;
 const ampulheta = document.querySelector('#ampulheta')
 const number = document.querySelector('#number');
 const btt = document.querySelector('#btt')
-let timer = 0;
+timer = 0;
 
 const gerador = (num) => {
     let meio = num/2,
@@ -40,15 +40,13 @@ const gerador = (num) => {
     timer += segundo;
     --countP1, --countP2;
 }
-
 const click = () => {
     let num = parseInt(number.value);
     console.log('NUMBER: ', num)
-
-    if(num%2!=0) num++;
+    if (num==0 || num>100) num = 1;
+    if (num%2!=0) num++;
     countP1 = num/2,
     countP2 = num;
-    
 
     const intervalo = setInterval( () => {
         gerador(num);
@@ -58,11 +56,9 @@ const click = () => {
             timer = 0;
             number.value = '';
             btt.disabled = false;
-
         }
     }, segundo*2);
 };
-
 btt.addEventListener('click', click, false);
 document.addEventListener("keypress", function(e) {
     if(e.key === 'Enter') btt.click()});
