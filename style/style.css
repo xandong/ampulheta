@@ -2,24 +2,19 @@
 
 :root {
     --cor-amarelo: #FFD166;
-    --cor-azul: #5BC0EB;
+    --cor-azul: #5ec8f5;
     --cor-rosa: #EF476F;
     --cor-purple: #8a2be2;
 }
-* {
-    margin: 0;
-    padding: 0;
-}
 
 body{
-    background-image: linear-gradient(0deg, #8dd7ff 20%, #6ac9f2 80%);
+    background-color: var(--cor-azul);
     color: aliceblue;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     margin: 0 auto;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
+
 }
 
 h1 {
@@ -70,7 +65,7 @@ h1 > strong {
     overflow: hidden;
     background-color: var(--cor-rosa);
     width: fit-content;
-    max-width: 95%;
+    max-width: 100%;
     margin: auto;
     border: 12px solid var(--cor-rosa);
     border-radius: 8px;
